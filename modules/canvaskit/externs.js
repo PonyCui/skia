@@ -45,6 +45,8 @@ var CanvasKit = {
 	MakeImage: function() {},
 	/** @return {CanvasKit.SkImage} */
 	MakeImageFromEncoded: function() {},
+	/** @return {CanvasKit.SkImage} */
+	MakeImageFromPicture: function() {},
 	/** @return {LinearCanvasGradient} */
 	MakeLinearGradientShader: function() {},
 	MakeOnScreenGLSurface: function() {},
@@ -79,6 +81,7 @@ var CanvasKit = {
 	// private API (i.e. things declared in the bindings that we use
 	// in the pre-js file)
 	_MakeImage: function() {},
+	_MakeImageFromTexture: function() {},
 	_MakeLinearGradientShader: function() {},
 	_MakePathFromCmds: function() {},
 	_MakeRadialGradientShader: function() {},

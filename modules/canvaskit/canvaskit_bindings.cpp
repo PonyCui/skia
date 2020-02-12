@@ -767,6 +767,11 @@ EMSCRIPTEN_BINDINGS(Skia) {
 
         return SkImage::MakeRasterData(info, pixelData, rowBytes);
     }), allow_raw_pointers());
+    function("MakeImageFromPicture", optional_override([](sk_sp<SkPicture> &picture, SimpleImageInfo ii)->sk_sp<SkImage> {
+        return SkImage::MakeFromPicture(picture, SkISize::Make(ii.width, ii.height),
+                                        nullptr, nullptr, SkImage::BitDepth::kU8,
+                                        SkColorSpace::MakeSRGB());
+    }), allow_raw_pointers());
     function("_MakeLinearGradientShader", optional_override([](SkPoint start, SkPoint end,
                                 uintptr_t /* SkColor*  */ cPtr, uintptr_t /* SkScalar*  */ pPtr,
                                 int count, SkTileMode mode, uint32_t flags)->sk_sp<SkShader> {

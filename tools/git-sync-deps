@@ -35,6 +35,9 @@ import subprocess
 import sys
 import threading
 
+import ssl   #add line 1
+
+ssl._create_default_https_context = ssl._create_unverified_context  #add line 2
 
 def git_executable():
   """Find the git executable.

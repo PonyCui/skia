@@ -232,8 +232,8 @@ echo "Compiling bitcode"
   skia_use_fontconfig=false \
   skia_use_freetype=true \
   skia_use_libheif=false \
-  skia_use_libjpeg_turbo=true \
-  skia_use_libpng=true \
+  skia_use_libjpeg_turbo=false \
+  skia_use_libpng=false \
   skia_use_libwebp=false \
   skia_use_lua=false \
   skia_use_piex=false \
@@ -243,8 +243,8 @@ echo "Compiling bitcode"
   skia_use_system_libwebp=false \
   skia_use_system_zlib=false\
   skia_use_vulkan=false \
-  skia_use_wuffs=true \
-  skia_use_zlib=true \
+  skia_use_wuffs=false \
+  skia_use_zlib=false \
   \
   ${GN_SHAPER} \
   ${GN_GPU} \

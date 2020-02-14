@@ -25,7 +25,7 @@ EMCC=`which emcc`
 EMCXX=`which em++`
 EMAR=`which emar`
 
-RELEASE_CONF="-Oz --closure 1 --llvm-lto 1 -DSK_RELEASE --pre-js $BASE_DIR/release.js \
+RELEASE_CONF="-O2 --llvm-lto 1 -DSK_RELEASE --pre-js $BASE_DIR/release.js \
               -DGR_GL_CHECK_ALLOC_WITH_GET_ERROR=0"
 EXTRA_CFLAGS="\"-DSK_RELEASE\", \"-DGR_GL_CHECK_ALLOC_WITH_GET_ERROR=0\","
 
@@ -230,7 +230,7 @@ echo "Compiling bitcode"
   skia_use_egl=true \
   skia_use_expat=false \
   skia_use_fontconfig=false \
-  skia_use_freetype=true \
+  skia_use_freetype=false \
   skia_use_libheif=false \
   skia_use_libjpeg_turbo=false \
   skia_use_libpng=false \
@@ -318,3 +318,5 @@ ${EMCXX} \
     -s WARN_UNALIGNED=1 \
     -s WASM=1 \
     -o $BUILD_DIR/canvaskit.js
+
+uglifyjs $BASE_DIR/draw_canvas.js >> $BUILD_DIR/canvaskit.js
